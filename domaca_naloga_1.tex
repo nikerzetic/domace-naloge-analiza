@@ -1,0 +1,200 @@
+\documentclass[12pt,a4paper,slovene]{article}
+\usepackage [slovene]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\begin{document}
+
+\section{Pokaži, da $\sqrt{2} + \sqrt{17}$ ni racionalno število.}
+
+Dokazovanje s protislovjem. Predpostavimo, da je $\sqrt{2} + \sqrt{17}$ racionalno število, kar pomeni, da ga lahko zapišemo z \textbf{okrajšanim} ulomkom. Za vsako racionalno število velja tudi, da je njegov kvadrat racionalno število.
+\[
+\left(\sqrt{2} + \sqrt{17}\right)^2 = \frac{m^2}{n^2}
+\]
+Ko to poračunamo, dobimo vsoto racionalnega števila in $2 \cdot \sqrt{2 \cdot 17}$. To pa je iracionalno število, kar ni težko dokazati. Povemo še, da je vsota iracionalnega in racionalnega števila iracionalno, kar pomeni, da smo prišli do protislovja.
+
+\section{Naj bo $n$ naravno število. Pokaži, da sta $\sqrt{n + \sqrt{n}}$ in $\sqrt{\frac{n+1}{n}}$ iracionalni števili.}
+TODO.
+
+\section{Naj bodo $a$, $b$, $c$, $d$ neničelna racionalna števila in $x$ iracionalno število. V kakšni zvezi morajo biti $a$, $b$, $c$, $d$, da bo $\frac{ax + b}{cx + d}$ racionalno število.}
+
+\[
+\frac{ax + b}{cx + d} = \frac{a(x + \frac{b}{a})}{c(x + \frac{d}{c})} = \frac{a}{c} \cdot \frac{x + \frac{b}{a}}{x + \frac{d}{c}}
+\]
+Količnik dveh racionalnih števil bo vedno racionalno število. Iz tega sledi, da bo $\frac{a}{c}$ vedno racionalno število. Za drugi del ulomka pa imamo dve možnosti:
+
+\begin{enumerate}
+	\item $\frac{x + \frac{b}{a}}{x + \frac{d}{c}} \in \mathbb{R} \setminus \mathbb{Q}$.
+	\item  $\frac{x + \frac{b}{a}}{x + \frac{d}{c}} \in \mathbb{Q}$
+\end{enumerate}
+
+Recimo, da je $\frac{x + \frac{b}{a}}{x + \frac{d}{c}}$ iracionalno število. Na vajah smo pokazali, da je produkt iracionalnega in racionalnega števila (ki ni enako $0$) vedno iracionalno število. To bi nas pripeljalo do protislovja. Iz tega lahko sklepamo, da velja: $\frac{x + \frac{b}{a}}{x + \frac{d}{c}} \in \mathbb{Q}$. To pomeni, da lahko to število zapišemo kot neko racionalno število $r$.
+
+\begin{equation*}
+	\begin{gathered}
+		\frac{x + \frac{b}{a}}{x + \frac{d}{c}} = r, r \in \mathbb{Q} \wedge r \neq 0\\
+		x + \frac{b}{a} = r (x + \frac{d}{c})\\
+		x + \frac{b}{a} = rx + r \frac{d}{c}\\
+		x - rx = r \cdot \frac{d}{c} - \frac{b}{a}\\
+		x (1- r) = r \cdot \frac{d}{c} - \frac{b}{a}
+	\end{gathered}	
+\end{equation*}
+\begin{enumerate}
+	\item $1 - r \neq 0$: $x = \frac{r \frac{d}{c} - \frac{b}{a}}{1 - r}$
+	
+	To nas pripelje do protislovja, saj želimo, da $x \notin \mathbb{Q}$, medtem ko je $\frac{r \frac{d}{c} - \frac{b}{a}}{1 - r} \in \mathbb{Q}$ 
+	
+	\item $1 - r = 0$: $r = 1$
+	
+	Vstavimo $r = 1$ v enačbo:
+	
+	\begin{equation*}
+		\begin{gathered}
+			x (1 - 1) = 1 \cdot \frac{d}{c} - \frac{b}{a}\\
+ 			0 = \frac{d}{c} - \frac{b}{a}\\
+ 			\frac{b}{a} = \frac{d}{c}\\
+ 			bc = ad
+		\end{gathered}	
+	\end{equation*}
+	
+	Če želimo, da bo $\frac{ax + b}{cx + d}$ racionalno število, mora veljati enačba $ad = bc$.
+\end{enumerate}
+
+\section{Poišči vse realne x, ki ustrezajo neenačbi:}
+\[
+\frac{x^2 + 10x - 29}{x^2 - 15x + 26} > -1
+\]
+Najprej premaknemo člen $-1$ na drugo stran enačbe, tako da imamo samo eno racionalno funkcijo, za katero nas zanima, kdaj je $> 0$. To ugotovimo tako, da poiščemo ničle zgornjega in spodnjega polinoma, ter tako dobimo ničle in pole racionalne funkcije. Narišemo si predznak in zapišemo intervale rešitev.
+
+\section{Reši neenačbe:}
+Več enačb, večinoma so podobne. Če imamo absolutne vrednosti, razdelimo neenačbe na več pogojev. Če imamo korene, pa pazimo, da ne dodamo rešitev pri tem ko kvadriramo enačbo. Pa rešimo kakšno neenačbo:
+\[|x - 1| > x + 4\]
+\begin{enumerate}
+    \item $x - 1 > 0$: Kar pomeni, da lahko normalno računamo.
+    \begin{align*}
+        x - 1 &> x + 4\\
+        -1 &> 4 \Rightarrow \text{ni rešitve} 
+    \end{align*}
+    \item $x - 1 < 0$: V neenačbo vstavimo nasprotno vrednost tistega, kar je v $||$.
+    \begin{align*}
+        - (x - 1) &> x + 4\\
+        -x  + 1 &> x + 4\\
+        2x &< -3\\
+        x &< -\frac{3}{2}
+    \end{align*}
+    Na tem koraku še nismo končali, saj smo predpostavili, da velja $x - 1 < 0$, kar moramo še preveriti.
+    \begin{align*}
+        \left(x - 1 < 0 \right) &\cap \left(x < -\frac{3}{2} \right)\\
+        \left(x < 1 \right) &\cap \left( x < -\frac{3}{2} \right)\\
+        x &< -\frac{3}{2}
+    \end{align*}
+\end{enumerate}
+No, še eno, mogoče tako s koreni.
+\[
+\sqrt{1 + x} + \sqrt{1 - x} > 1
+\]
+Hitro opazimo, da je funkcije definirana samo na intervalu $\left[-1, 1\right]$, saj je $\sqrt{a}, a \in \mathbb{R}^+$ definiran samo za nenegativna števila. Na to bomo morali paziti, ko bomo na koncu napisali našo rešitev, in seveda tudi med samim reševanjem naloge.
+Kar moramo paziti pri neenačbah s koreni je, da lahko \textbf{kvadriramo le, če sta obe strani neenačbe nenegativni}. Zdaj se pa lotimo računanja.
+\[
+\left( \sqrt{1 - x} \right)^2 > \left( 1 - \sqrt{1 + x} \right)^2
+\]
+No, smo že tukaj. Tole je narobe. Ravno pišem kako se to dela, pa sem se lotil narobe. Naredimo 2 pogoja, kdaj lahko kvadriramo in kdaj ne:
+\begin{enumerate}
+    \item $1 - \sqrt{1 + x} < 0$: Brez posebnega mučenja lahko opazimo, da to velja za vse $x$-e, ki so $> 0$. Še malo sklepanja: če je desna stran
+    \[\sqrt{1 - x} >1 - \sqrt{1 + x}\]
+    negativna, potem bo zagotovo veljalo, da bo manjša od leve, saj bo $\sqrt{1 - x} \geqslant 0$ za kateri koli $x$. To pomeni, da so vsi pozitivni $x$ rešitev.
+    \item $1 - \sqrt{1 + x} \geqslant 0$: Tu pa lahko kvadriramo.
+    \begin{align*}
+        1 - x &> 1 - 2 \cdot \sqrt{1 + x} + 1 + x \\
+        -2x &> - 2 \cdot \sqrt{1 + x} \\
+        x &< \sqrt{x + 1}
+    \end{align*}
+    Spet se moramo vprašati, če lahko kvadriramo. Ampak pravzaprav bomo sedaj ugotovili, da ni nobene potrebe po računanju tega (jasno, samo v tem specifičnem primeru).
+    
+    Poglejmo tole neenačbo: $1 - \sqrt{1 + x} \geqslant 0$. To smo v tem primeru privzeli. Če hočemo, da je res, potem $x$ ne sme biti večji od $0$. Če imamo samo negativna števila (in $0$), potem je enačba $x < \sqrt{x + 1}$ vedno res (kvadratni koren je vedno nenegativen).
+\end{enumerate}
+Kaj smo ugotovili s tema dvema korakoma? Da je rešitev katerokoli število v definicijskem območju, torej $x \in \left[-1, 1\right]$.
+
+\section{Pokaži, da je ulomek $\frac{21n+4}{14n+3}$ okrajšan za vsako naravno število $n$.}
+
+Najprej ulomek malo poenostavimo. Naj bo $m = 7 n, m \in \mathbb{N}$.
+\[
+    \frac{21n+4}{14n+3} = \frac{3m+4}{2m+3} = \frac{3(m+1) + 1}{2(m + 1)+1} 
+\]
+Dokazati želimo, da sta si števili $3(m+1) + 1$ in $2(m+1) + 1$ tuji.
+Recimo, da imata števili nek skupen faktor. Potem imata tudi večkratnika teh dveh števil nek skupen faktor. Pametno izberimo večkratnika:
+\[
+2\left(3(m+1) + 1\right) \hspace{0.3cm} \text{in} \hspace{0.3cm} 3\left(2(m+1) + 1\right)
+\]
+Večkratnika morata imeti še vedno nek skupni faktor. Izračunajmo do konca:
+\[
+6(m+1) + 2 \hspace{1cm} 6(m+1) + 3 
+\]
+Opazimo, da sta ta dva večkratnika sosednji števili. Dve sosednji števili sta si vedno tuji, saj njun največji skupni faktor ne more biti večji kot $1$. Prišli smo do protislovja, kar pomeni, da je zgornji ulomek okrajšan.
+
+\section{Dokaži:}
+\begin{enumerate}[a)]
+    \item \textbf{Za vsako naravno število $n$, ki ni deljivo s $3$, ima $n^2$ ostanek $1$ pri deljenju s $3$.}
+    
+    Ideja, ki mogoče ni najboljša, je pa prva ki mi pride na pamet in deluje: z indukcijo pokažemo za vsak $3k - 1$ in $3k - 2, k\in\mathbb{N}$ velja ta trditev (pravzaprav sta to 2 indukciji, ampak jih bomo napisali hkrati, ker bosta skoraj identični).
+    \begin{description}
+        \item [n = 1, n = 2]
+        \begin{align*}
+            1 &= 3k - 2 & 1^2 &\equiv 1 \mod{3}\\
+            1 &= 3k - 1	& 2^2 &\equiv 1 \mod{3}
+        \end{align*}
+        \item[Predpostavimo, da velja za $n$, dokazujemo za $n+3$:]
+        \[
+            (n + 3)^2 = n^2 + 2\cdot 3 n + 3\cdot 3 = n^2 + 3l, l \in\mathbb{N}  
+        \]
+        Privzeli smo, da je ostanek $n^2$ pri deljenju s $3$ enak $1$. Če prištejemo nek večkratnik števila 3 (v našem primeru $3l$), se ostanek pri deljenju s 3 ne spremeni.
+    \end{description}
+    S tem ko smo trditev dokazali za $1$ in za $n+3$, avtomatično velja za vsa naravna števila oblike $3k - 2, k\in\mathbb{N}$, podobno velja za $2$ in $n + 3$. Tako smo trditev dokazali za vsa naravna števila, razen večkratnike števila $3$, kar je točno to, kar od nas želi ta naloga.
+    
+    \item \textbf{Če sta $p$ in $8p^2 + 1$ praštevili, potem je $p = 3$}
+    
+    Pomembna stvar, ki se je moramo tu spomniti je, da lahko vsako praštevilo, ki je $> 3$ zapišemo kot $6n + 1$ ali $6n - 1, n\in\mathbb{N}$. Ta razmislek ni težak in je prepuščen bralcu. Ko to enkrat nastavimo, samo poračunamo:
+    \begin{itemize}
+        \item $8 (6n + 1)^2 + 1 = 8 (36n^2 + 12n + 1) + 1 = 8\cdot 36n^2 + 8\cdot 12 n + 9 =\\= 3 (8\cdot 12 + 8\cdot 4 + 3)$
+        \item $8 (6n - 1)^2 + 1 = \ldots = 3 (8\cdot 12 - 8\cdot 4 + 3)$
+    \end{itemize}    
+    Odgovor pojavi sam od sebe. Če lahko praštevilo izrazimo kot produkt dveh drugih števil (ki nista enaki 1), potem to ni praštevilo.
+    
+    Preostane nam samo še, da preverimo za praštevili, ki smo jih izvzeli iz te predpostavke, torej za $2$ in $3$. Dobimo torej:
+    \begin{itemize}
+        \item $2$ in $8 \cdot 4 + 1 = 25$, ki ni praštevilo, torej za $p = 2$ ta trditev ne velja.
+        \item $3$ in $8 \cdot 9 + 1 = 73$, pa sta praštevili, torej trditev za $p = 3$ velja. 
+    \end{itemize}
+\end{enumerate}
+
+\section{Naj bosta $p, q > 3$ praštevili. Pokaži, da $24$ deli $p^2 - q^2$.}
+
+Enak trik kot pri prejšnjem dokazu. Praštevili večji od 3 lahko zapišemo kot $(6n \pm 1), n\in\mathbb{N}$. Ker smo leni, najprej poskusimo, brez da bi računali za vse 4 primere (kar z $\pm$ v enačbi).
+\begin{align*}
+&(6n \pm 1)^2 - (6m \pm 1)^2 = \\
+&= 36n^2 \pm 12n + 1 - (36m^2 \pm 12m + 1) = \\
+&= 36n^2 - 36m^2 \pm 12n \pm 12m + 1 - 1 = \\
+&= 36(n^2 - m^2) + 12 (\pm n \pm m) = \\
+&= 12(3n^2 + 3m^2 \pm n \pm m)
+\end{align*}
+Vidimo, da brez težav lahko pokažemo, da $12$ deli razliko kvadratov teh dveh števil. Za $24$ pa moramo še malo premisliti. Ali lahko dokažemo, da je $(3n^2 + 3m^2 \pm n \pm m)$ sodo število? Če nam uspe to, potem smo dokazali kar želimo.
+\begin{enumerate}
+    \item Razmislek: Če je $n$ liho število, potem je tudi $n^3$ liho število. Če je $n$ sodo število, pa prav tako velja, da je $n^3$ sodo.
+    \item Razmislek: Če lihemu številu prištejemo ali odštejemo liho število, potem dobimo sodo število.
+    \item Razmislek: Sodo število dobimo tudi, kadar sodemu številu prištejemo ali odštejemo sodo število. 
+\end{enumerate}
+Iz teh razmislekov lahko sklepamo naslednje: ne glede na to ali sta $n$ in $m$ soda ali liha, zagotovo bo veljalo:
+\begin{itemize}
+    \item $n^3 \pm n$ je sodo število.
+    \item $m^3 \pm m$ je prav tako sodo število.
+\end{itemize}
+Tudi vsota teh dveh števil je sodo število. Zato lahko zapišemo:
+\[
+\ldots = 12(3n^2 + 3m^2 \pm n \pm m) = 12 \cdot 2 \cdot l = 24 \cdot l, l\in\mathbb{Z}
+\]
+
+\end{document}
