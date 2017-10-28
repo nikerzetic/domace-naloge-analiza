@@ -1,0 +1,115 @@
+\documentclass[12pt,a4paper,slovene]{article}
+\usepackage [slovene]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\begin{document}
+\begin{enumerate}[(1)]
+	\item Poenostavi naslednje izraze
+	\begin{enumerate}[(a)]
+		\item $(3+4i)\overline{(1-3i)}$
+		\begin{multline*}
+			(3+4i)\overline{(1-3i)} = (3+4i)(1+3i) = 3 + 9i + 4i - 12 = -9 + 13i
+		\end{multline*}
+		
+		\item $\dfrac{7 - 3i}{1 + i}$
+		
+		\begin{multline*}
+			\dfrac{7-3i}{1+i} = \dfrac{(7-3i)(1-i)}{(1+i)(1-i)} = \dfrac{7 - 7i - 3i - 3}{2} = \dfrac{4 - 10i}{2} = 2 - 5i
+		\end{multline*}
+		
+		\item $(1 + i \sqrt{3})^{10}$
+		
+		To ena"cbo najla"zje re"simo tako, da jo pretvorimo v eulerjev zapis.
+		\begin{align*}
+		z & = 1 + i \sqrt{3}\\
+		|z| &= \sqrt{1 + 3} = 2 \\
+		\tan \varphi &= \dfrac{\sqrt{3}}{1} \Rightarrow \varphi = \dfrac{\pi}{3}\\
+		z &= 2e^{i\frac{\pi}{3}}
+		\end{align*}
+		Nato pora"cunamo njeno deseto potenco:
+		\begin{equation*}
+		z^{10} = 2^{10}e^{10i\frac{\pi}{3}} = 1024e^{i\frac{4\pi}{3}}
+		\end{equation*}
+		Nato lahko to pretvorimo nazaj v kartezi"cno obliko:
+		\begin{equation*}
+		z^{10} = 1024\left(\cos\dfrac{4\pi}{3} + i\sin\dfrac{4\pi}{3}\right) =  1024\left(-\dfrac{1}{2} - i\dfrac{\sqrt{3}}{2}\right) = -512\left(1 + i\sqrt{3}\right)
+		\end{equation*}
+	\end{enumerate}
+
+	\item Zapi"si vse vrednosti izraza $\sqrt[7]{(-\sqrt{3} - i)^5}$ in jih nari"si.
+	
+	To nalogo ponovno najla"zje re"simo tako, da pretvorimo v eulerjev zapis.
+	\begin{align*}
+	w &= -\sqrt{3} - i\\
+	z^7 &= (-\sqrt{3} - i)^5 = w^5
+	\end{align*}
+	Re"sujemo za $z$.
+	
+	Najprej pora"cunamo $w^5$:
+	\begin{align*}
+	w &= -\sqrt{3} - i\\
+	|w| &= \sqrt{3 + 1} = 2\\
+	\tan \varphi &= \dfrac{-1}{-\sqrt{3}} \Rightarrow \varphi = \dfrac{\pi}{6}\\
+	w &= 2e^{i\frac{\pi}{6}}\\
+	w^5 &= 2^5 e^{i\frac{5\pi}{6}} = 32 e^{i\frac{5\pi}{6}}
+	\end{align*}
+	
+	\begin{align*}
+	z &= |z|e^{i\varphi}\\
+	z^7 &= w^5\\
+	|z|^7 e^{i7\varphi} &= 32 e^{i(\frac{5\pi}{6} + 2k\pi)}, k \in \ZZ
+	\end{align*}
+	
+	Sedaj primerjamo absolutne vrednosti in kote posebej. Za absolutne vrednosti dobimo:
+	\begin{equation*}
+	|z|^7 = 32 \Rightarrow |z| = \sqrt[7]{32}
+	\end{equation*}
+	Za kote pa dobimo:
+	\begin{align*}
+	7\varphi &= \frac{5\pi}{6} + 2k\pi
+	\varphi = \frac{5\pi}{42} + \dfrac{2k\pi}{7}, k \in [0, 6]
+	\end{align*}
+	$k \in [0, 6]$, ker ko je $k=7$ pri"stejemo kotu $2\pi$ in iz trigonometrije vemo, da smo nazaj na za"cetku.
+	
+	$z$ lahko sedaj zapi"semo kot:
+	\begin{equation*}
+	z = \sqrt[7]{32} e^{i\left(\frac{5\pi}{42} + \frac{2k\pi}{7}\right)} = \sqrt[7]{32}\left(\cos \left(\dfrac{5\pi}{42} + \dfrac{2k\pi}{7}\right) +i\sin \left(\dfrac{5\pi}{42} + \dfrac{2k\pi}{7} \right)\right)
+	\end{equation*}
+	 
+	Opomba: ta rezultat je "zal druga"cen kot tisti v re"sitvah. Mislim, da so se zmotili oni, ker je ta ena"cba re"sena ``by the book''.
+	
+	\item Skiciraj naslendje podmno"zice kompleksnih "stevil.
+	
+	Skice v latexu so zelo zameudne, tako da lahko re"site to nalogo sami, ali pa po"caka na "cas, ko bom imel res preve"c "casa.
+	
+	\item Naj bo $k \neq 0$ realno "stevilo. Za katere $k$ je $1 + ik$ bli"ze izhodi"s"cu kot $1-\frac{i}{k}$?
+	
+	Razdaljo od izhodi"s"ca nam predstavlja absolutna vrednost "stevila, torej lahko zapi"semo:
+	\begin{equation*}
+	|1+ik| < \left|1-\dfrac{i}{k}\right|
+	\end{equation*}
+	Ker so absolutne vrednosti ve"cje ali enake 0, lahko neena"cbo kvadriramo in razre"simo absolutne vrednost:
+	\begin{equation*}
+	1 + k^2 < 1 + \dfrac{1}{k^2}
+	\end{equation*}
+	Sedaj lahko ena"cbo nekoliko preuredimo in dobimo:
+	\begin{align*}
+	k^2 &< \dfrac{1}{k^2}\\
+	k^4 &< 1
+	\end{align*}
+	Ker je $k^2$ pozitivno "stevilo, lahko ena"cbo korenimo in dobimo:
+	\begin{equation*}
+	k^2 < 1
+	\end{equation*}
+	Sledi dolg premislek o tem, kaj je na"s rezultat. "Ce si skiciramo parabolo $k^2 = 1$, dobimo dve ni"cli: $-1, 1$, parabola pa je med tema dvema ni"clama manj"sa od 1. Torej je $k \in (-1, 1)$, ali druga"ce povedano: $|k| < 1$.
+\end{enumerate}
+\end{document}
