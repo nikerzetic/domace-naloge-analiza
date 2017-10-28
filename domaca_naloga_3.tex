@@ -1,0 +1,74 @@
+\documentclass[12pt,a4paper,slovene]{article}
+\usepackage [slovene]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\RR}{\mathbb{R}}
+
+\begin{document}
+\begin{enumerate}[(1)]
+	\item Dolo"ci supremum, infimum, minimum in maksimum naslednjih mno"zic, "ce obstajajo.
+	\begin{enumerate}[(a)]
+		\item $A = \{x^2 - 6x; x > 0\}$
+		
+		Opazimo, da je pogoj za mno"zico parabola, ki jo lahko razcepimo v $x^2 - 6x = x(x-6)$. Teme te parabole je $x = 1/2(x_0 + x_1) = 3$, to pomeni $T(3, -9)$. Parabola nara"s"ca, torej nima supremuma in maksimuma, ima pa minimum, ki je enak infimum, t.j: $\inf A = \min A = -9$
+		
+		\item $B = \left\{\dfrac{2n-3}{n}, n \in \NN\right\}$
+		
+		Pogoj se da preurediti v $2 - \frac{3}{n}$. Ker naravna "stevila nara"s"cajo, bo ulomek $3/n$ "sel proti 0, za velike $n$. To pomeni, da bo najmanj"sa vrednost v tej mno"zici, ko je $n=1$, kar je $-1$. Mno"zica bo imela "cedalje ve"cje vrednosti, ko bo $n$ velik, ker bo $3/n$ "cedalji manj"si. To pomeni da se bodo vrednosti v mno"zici $B$ pribli"zevale 2. To pomeni:
+		\begin{align*}
+		\inf B = \min B = -1 && \sup B = 2
+		\end{align*}
+		$\max B$ pa ne obstaja.
+		
+		\item $C = \{x \in [1,3]; \text{$x$ ima v decimalnem zapisu vsaj dve trojki}\}$
+	
+		Zapi"simo si nekaj "stevil, ki so zelo blizu 1 in imajo v decimalnem zapisu dve trojki:
+		\begin{align*}
+		1&,33\\
+		1&,033\\
+		1&,0033\\
+		1&,00033
+		\end{align*}
+		Opazimo, da lahko vedno zapi"semo "se manj"se "stevilo, tako da prej"snjega delimo z 10. Ne glede na to kolikokrat delimo to "stevilo, pa ne bo nikoli enako 1. To pomeni da mno"zica nima minimuma, vendar ima infimum $\inf C = 1$
+		
+		Podobno lahko naredimo za "stevila, ki se bli"zajo 3:
+		\begin{align*}
+		2&,33\\
+		2&,933\\
+		2&,9933\\
+		2&,99933
+		\end{align*}
+		Spet opazimo, da lahko vedno zapi"semo ve"cje "stevilo, tako da prej"snjemu dodamo devekto v decimalni zapis. To "stevilo nikoli ne bo enako 3. To pomeni mno"ica $C$ nima maksimuma, vendar ima supremum $\sup C = 3$
+		
+		\item $D = \left\{\dfrac{2}{1+x^2} - 1; x \in \RR \right\}$
+		
+		Ker imamo v pogoju za mno"zico $x^2$, bo to "stevilo vedno nara"s"calo, ko bo nara"s"cala absolutna vrednost $x$. To pomeni, da je dovolj da obravnamo samo pozitivna "stevila in 0. Ulomek $\frac{2}{1+x^2}$ bo "cedalje manj"si, ko se bo $1+x^2$ ve"cal. To pomeni da, ko bo $x$ zelo velik, bo $\frac{2}{1+x^2}$ zelo majhen. S tem vemo, da bo najve"cji element v mno"zici, ko bo $x=0$, t.j.: 1. Pri velikih $x$-ih, pa se bodo vrednosti pribli"zevale $-1$, vendar je ne bodo nikoli dosegle. To lahko zapi"semo kot:
+		\begin{align*}
+		\sup D = \max D = 1 && \inf D = -1
+		\end{align*}
+		minimum pa ne obstaja.
+		
+		\item $E = \left\{\dfrac{m-2m^2}{m^2 + 4}; m \in \NN \right\}$
+		
+		Opazimo, da je pogoj za mno"zico zelo podoben racionalni funkciji, ki ima za definicijsko obmo"cje naravna "stevila. Lahko si pomagamo z grafom te funkcije, kjer $m \in \RR$ in nato obravnamo samo $m$-je, ki so naravna "stevila. Najprej si zapi"simo pogoj kot funkcijo za la"zje ra"cunanje in jo preuredimo:
+		\begin{equation*}
+		f(m) = \dfrac{m-2m^2}{m^2 + 4} = \dfrac{m(1-m)}{m^2 + 4} = \dfrac{-m(m-1)}{m^2 + 4}
+		\end{equation*}
+		Opazimo da funkcija nima polov in ima dve ni"cli $m_0 = 0, m_1 = 1/2$. Nobena od ni"cel ni v naravnih "stevilih.
+		
+		Za"cetna vrednost te funkcij je $f(0) = 0$, predznak pa je negativen. To pomeni, da bo na intervalu $(1, \infty)$ funkcija negativna in padajo"ca. Ker nas zanimajo samo vrednosti, kjer je $m \in \NN$, lahko s pomo"cjo skice ugotovimo, da bo najve"cja vrednost funkcije v $m = 1$, kjer je $f(m) = -1/5$.
+		
+		Funkcija ima asimptoto $y = -2$. To pomeni, da se bo pri velikih $m$-jih vrednost pribli"zevala $-2$, vendar je funkcija nikoli ne bo dosegla. Sedaj lahko zapi"semo vse na"se ugotovitve:
+		\begin{align*}
+		\sup E = \max E = -\dfrac{1}{5} && \inf E = -2
+		\end{align*}
+		mno"zica $E$ nima minimuma.
+	\end{enumerate}
+\end{enumerate}
+\end{document}
