@@ -59,37 +59,57 @@
 	w &= -\sqrt{3} - i\\
 	|w| &= \sqrt{3 + 1} = 2\\
 	\tan \varphi &= \dfrac{-1}{-\sqrt{3}} \Rightarrow \varphi = \dfrac{\pi}{6}\\
-	w &= 2e^{i\frac{\pi}{6}}\\
-	w^5 &= 2^5 e^{i\frac{5\pi}{6}} = 32 e^{i\frac{5\pi}{6}}
-	\end{align*}
-	
-	\begin{align*}
-	z &= |z|e^{i\varphi}\\
+    \end{align*}
+    \textbf{Pozor!} Tule se skriva pogosta napaka. Nismo izračunali pravega kota. Če bi narisali skico, bi takoj opazili, da pri številu $w = -\sqrt{3} - i$ kot zagotovo ne more biti $\frac{\pi}{6}$! Pravi kot je večji za $\pi$, torej je $\varphi = \frac{7 \pi}{6}$. Sedaj lahko zapišemo $w$ v eulerjevi obliki.
+    \begin{align*}
+    w &= 2e^{i\frac{7\pi}{6}}\\
+    w^5 &= 2^5 e^{i\frac{35\pi}{6}} = 32 e^{i\frac{35\pi}{6}}\\
+    \intertext{najti želimo 7-mi koren tega števila}
+    z &= |z|e^{i\varphi}\\
 	z^7 &= w^5\\
-	|z|^7 e^{i7\varphi} &= 32 e^{i(\frac{5\pi}{6} + 2k\pi)}, k \in \ZZ
+	|z|^7 e^{i7\varphi} &= 32 e^{i(\frac{35\pi}{6} + 2k\pi)}\qquad k \in \ZZ
 	\end{align*}
-	
 	Sedaj primerjamo absolutne vrednosti in kote posebej. Za absolutne vrednosti dobimo:
 	\begin{equation*}
 	|z|^7 = 32 \Rightarrow |z| = \sqrt[7]{32}
 	\end{equation*}
 	Za kote pa dobimo:
 	\begin{align*}
-	7\varphi &= \frac{5\pi}{6} + 2k\pi
-	\varphi = \frac{5\pi}{42} + \dfrac{2k\pi}{7}, k \in [0, 6]
+	7\varphi &= \frac{35\pi}{6} + 2k\pi\\
+	\varphi &= \frac{5\pi}{6} + \dfrac{2k\pi}{7},\ k \in \{0, 1, 2, \ldots , 6\}
 	\end{align*}
-	$k \in [0, 6]$, ker ko je $k=7$ pri"stejemo kotu $2\pi$ in iz trigonometrije vemo, da smo nazaj na za"cetku.
+	$k$ je celo število od $0$ do $6$, ker ko je $k = 7$ pri"stejemo kotu $2\pi$ in iz trigonometrije vemo, da smo nazaj na za"cetku.
 	
 	$z$ lahko sedaj zapi"semo kot:
 	\begin{equation*}
-	z = \sqrt[7]{32} e^{i\left(\frac{5\pi}{42} + \frac{2k\pi}{7}\right)} = \sqrt[7]{32}\left(\cos \left(\dfrac{5\pi}{42} + \dfrac{2k\pi}{7}\right) +i\sin \left(\dfrac{5\pi}{42} + \dfrac{2k\pi}{7} \right)\right)
+	z = \sqrt[7]{32} e^{i\left(\frac{5\pi}{6} + \frac{2k\pi}{7}\right)} = \sqrt[7]{32}\left(\cos \left(\dfrac{5\pi}{6} + \dfrac{2k\pi}{7}\right) +i\sin \left(\dfrac{5\pi}{6} + \dfrac{2k\pi}{7} \right)\right)
 	\end{equation*}
-	 
-	Opomba: ta rezultat je "zal druga"cen kot tisti v re"sitvah. Mislim, da so se zmotili oni, ker je ta ena"cba re"sena ``by the book''.
-	
+	 	
 	\item Skiciraj naslendje podmno"zice kompleksnih "stevil.
 	
-	Skice v latexu so zelo zameudne, tako da lahko re"site to nalogo sami, ali pa po"caka na "cas, ko bom imel res preve"c "casa.
+    \begin{enumerate}[(a)]
+        \item $\{z \in \mathbb{C}; 2 (\text{Re } z)^2 + \text{Im } < 1 \}$\\
+        Zapišimo $z$ v kartezični obliki, $z = x + iy$. Vidimo, da so v množici tista kompleksna števila, ki ustrezajo neenačbi:
+        \[
+        2x^2 + y < 1
+        \]
+        Enačbo še malo preuredimo, in že znamo narisati to množico. Tu je žal ne bom narisal, ker trenutno nimam preveč časa.
+        \[
+        y < -2x^2 + 1
+        \]
+        Rezultat so vse točke, ki ležijo pod parabolo $y = -2x^2 + 1$.
+        
+        \item $\{ z \in \mathbb{C}; \text{Re }z^2 + 4 \text{Im }z = 0 \}$
+        Naredimo enako kot pri prejšnji nalogi, samo da imamo celo nekaj dela z računanjem.
+        \begin{align*}
+            \text{Re}(x + iy)^2 + 4y &= 0\\
+            \text{Re}(x^2 - y^2 + 2xyi) + 4x = x^2 - y^2 + 4y &= 0\\
+            x^2 - (y - 2)^2 + 4 &= 0\\
+            (x + 2)^2 - y^2 &= -4\\
+            \frac{(x+2)^2}{4} - \frac{y^2}{4} &= -1
+        \end{align*}
+        Po tem, ko dopolnimo popolni kvadrat je očitno, da gledamo v enačbo hiperbole. Risanje je prepuščeno bralcu.
+    \end{enumerate}
 	
 	\item Naj bo $k \neq 0$ realno "stevilo. Za katere $k$ je $1 + ik$ bli"ze izhodi"s"cu kot $1-\frac{i}{k}$?
 	
@@ -111,5 +131,88 @@
 	k^2 < 1
 	\end{equation*}
 	Sledi dolg premislek o tem, kaj je na"s rezultat. "Ce si skiciramo parabolo $k^2 = 1$, dobimo dve ni"cli: $-1, 1$, parabola pa je med tema dvema ni"clama manj"sa od 1. Torej je $k \in (-1, 1)$, ali druga"ce povedano: $|k| < 1$.
+    
+    Seveda tudi pri tej nalogi obstaja lahka očitna geometrijska rešitev. Narišemo si premico, na kateri ležijo vsa kompleksna števila, $1 + ik$, ko $k$ preteče vsa realna števila (razen 0). To je premica $x = 1$. Hitro opazimo da, manjši kot je $|k|$, manjša je oddaljenost od izhodišča. Sedaj nas zanima samo še za katere $k$ velja:
+    \[
+    |k| < \frac{1}{|k|}
+    \]
+    Očitno to velja samo za števila $|k|$, ki so $\leq 1$.
+
+    \item Rešeno na faksu pri proseminarju. Nekako nima smisla da bi še enkrat pisal rešitev.
+    
+    \item Izračunaj množice kompleksnih števil $z$, ki zadoščajo (ne)enačbam. Množice rešitev nariši.
+    
+    \begin{enumerate}[(a)]
+        \item $z^3 = -2 + 2i$
+        Obe strani enačbe zapišemo z eulerjevo formulo in primerjamo absolutno vrednost ter kot.
+        \begin{align*}
+            |-2 + 2i| &= \sqrt{(-2)^2 + 2^2} = 2\sqrt{2}\\
+            \tan \theta &= \left(\frac{y}{x}\right) = -\frac{2}{2} = -1 \implies \theta = \frac{3\pi}{4}\\
+            \left(|z| e^{i \varphi}\right) &= |z|^3 e^{i 3\varphi} = 2\sqrt{2} e^{i\frac{3\pi}{4}}\\
+            |z|^3 &= 2\sqrt{2} = \sqrt{8} \implies |z| = \sqrt[6]{8} = \sqrt{2}\\
+            3\varphi &= \frac{3\pi}{4} + 2k\pi, k \in \{0, 1, 2\}\\
+            \varphi &= \frac{\pi}{4} + \frac{2 k \pi}{3}              
+        \end{align*}
+        Sedaj lahko še napišemo števila z, ki ustrezajo enačbi, vendar v se ni treba preveč mučit, napišimo samo tako, kot je v rešitvah:
+        \[
+        z = \sqrt{2}(\cos(\frac{\pi}{4} + \frac{2k\pi}{3}) + i \sin(\frac{\pi}{4} + \frac{2k\pi}{3})),\ k = 0, 1, 2
+        \]
+        
+        \item $z^8 + z^4 - 12 = 0$\\
+        Poskusimo podobno, vendar preden se vržemo v nalogo lahko naredimo preprosto substitucijo, da nam bo lažje. Naj bo $w = z^4$. Tako moramo rešiti samo preprosto kvadratno enačbo.
+        \begin{align*}
+            w^2 + w - 12 &= 0\\
+            (w + 4) (w - 3) &= 0 \implies w = -4 \lor w = 3 
+        \end{align*}
+        Zdaj samo poračunamo za oba primera.
+        \begin{enumerate}
+            \item $w=-4$
+            \begin{align*}
+                z^4 &= -4\\
+                |z| &= \sqrt[4]{4} = \sqrt{2}\\
+                \varphi &= \frac{\pi}{4} + \frac{2\pi}{4} = \frac{pi}{4} + \frac{\pi}{2}\\
+                z &= \sqrt{2} (\cos(\frac{\pi}{4} + \frac{\pi}{2}) + i \sin (\frac{\pi}{4} + \frac{\pi}{2})), \ k = 0, 1, 2, 3
+            \end{align*}
+            \emph{Opomba:} Če bi slučajno pomislil, potem bi opazil, da so tole precej lepi koti, prav tako razdalja od izhodišča, vse nam je že od nekod znano. Lahko pišemo tudi:
+            \[
+            z = \pm 1 \pm i
+            \]
+            \item $w = 3$\\
+            Identično kot za prvi primer, samo da se meni ne da toliko pisat.
+            \begin{align*}
+                z &= \sqrt{3} (\ldots)\\
+                \varphi &= \frac{\pi}{4} + \frac{\pi}{2}\\
+                z &= \sqrt{3} (\cos\varphi + i\sin \varphi),\ k = 1, 2, 3, 4\\
+            \end{align*}
+        \end{enumerate}
+        
+        \item $\sqrt{|z|^2 - 2} + \text{Im}\;z > \text{Re}\;z$\\
+        Poskusimo zapisati $z$ v kartezični obliki, torej $z = x + yi$:
+        \begin{align*}
+            \sqrt{x^2 + y^2 - 2} + y > x\\
+            \sqrt{x^2 + y^2 - 2} > x - y\\
+        \end{align*}
+        Poglejmo, kdaj ima ta enačba sploh smisel. Pogledati moramo, kdaj je vrednost znotraj korena negativna, in kakšna je desna stran.
+        %
+        \begin{enumerate}
+            \item $x - y < 0$: Desna stran enačbe je negativna, leva pa bo vedno nenegativna, torej bo neenačaj veljal na celotnem definicijskem območju, torej ko velja $x^2 + y^2 - 2 \geq 0$.
+            \[
+            (x < y) \land (x^2 + y^2 \geq 2)
+            \]
+            \item $x - y \geq 0$: Enačbo lahko kvadriramo.
+            \begin{align*}
+                x^2 + y^2 - 2 &> (x - y)^2 = x^2 - 2xy +  y^2\\
+                -2 &> -2xy\\
+                xy &> 1\\
+                (x \geq y) &\land (xy > 1)
+            \end{align*}
+        \end{enumerate}
+        Torej imamo celotno rešitev:
+        \[
+        \left\{ z = x+ iy; (x \geq y) \land (xy > 1) \lor (x < y) \land (x^2 + y^2 \geq 2) \right\}
+        \]
+        
+    \end{enumerate}
+
 \end{enumerate}
 \end{document}
