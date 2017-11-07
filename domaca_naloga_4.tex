@@ -138,7 +138,40 @@
     \]
     Očitno to velja samo za števila $|k|$, ki so $\leq 1$.
 
-    \item Rešeno na faksu pri proseminarju. Nekako nima smisla da bi še enkrat pisal rešitev.
+    \item Pokaži, da je množica kompleksnih števil $\left\{ z = \frac{3}{2 + \cos \varphi + i \sin \varphi}; \varphi \in \RR \right\}$ podmnožica krožnice s središčem $s = 2$ in polmerom 1.
+    
+    Kako se lotiti te naloge? Ali lahko preoblikujemo zgornjo enačbo tako, da bomo dobili del krožnice? Nevem. Lotimo se drugače. Najprej zapišimo, kaj velja za krožnico, omenjeno v besedilu:
+    \[
+    |z - 2| = 1
+    \]
+    Sedaj pa vstavimo omenjen izraz. Če je dana množica podmnožica krožnice, potem bo enakost veljala za vsak $\varphi \in \RR$.
+    \[
+    \left|\frac{3}{2 + \cos \varphi + i \sin \varphi} - 2\right| = \left|\frac{3}{2 + e^{i \varphi}} - 2\right| = \left|\frac{3 - 4 - 2 e ^{i\varphi}}{2 + e^{i \varphi}} \right| = \left|\frac{-1 - 2 e ^{i\varphi}}{2 + e^{i \varphi}} \right|
+    \]
+    No, kaj pa zdaj? Kako lahko izraz poenostavimo še bolj? Poskusimo uporabiti tole formulo za absolutno vrednost kompleksnega števila.
+    \[
+    |z| = \sqrt{z \overline{z}}
+    \]
+    Seveda vemo tudi, da je absolutna vrednost ulomka enaka kvocientu absolutnih vrednosti števca in imenovalca.
+    \[
+    \frac{|-1 - 2e^{i\varphi}|}{|2 + e^{i\varphi}|} \\
+    \]
+    Poračunajmo števec in imenovalec posebej. Spomnimo, da velja $\overline{e^{i\varphi}} = e^{-i\varphi}$.
+    \begin{multline*}
+    \sqrt{(-1 - 2e^{i\varphi}) \overline{(-1 - 2e^{i\varphi})}} =
+    \sqrt{(1 + 2e^{i\varphi}) (1 + 2e^{-i\varphi})} = \\
+    \sqrt{1 + 2e^{-i\varphi} + 2e^{i\varphi} + 4} = \sqrt{5 + 2(e^{-i\varphi} + e^{i\varphi})}
+    \end{multline*}
+    \begin{multline*}
+    \sqrt{(2 + e^{i\varphi}) (2 - e^{-i\varphi})} =
+    \sqrt{1 + 2e^{-i\varphi} + 2e^{i\varphi} + 4} = \sqrt{5 + 2(e^{-i\varphi} + e^{i\varphi})}
+    \end{multline*}
+    Vidimo, da sta števec in imenovalec enaka, torej, torej velja:
+    \[
+    \frac{\sqrt{5 + 2(e^{-i\varphi} + e^{i\varphi})}}{\sqrt{5 + 2(e^{-i\varphi} + e^{i\varphi})}} = \frac{1}{1} = 1
+    \]
+    
+    
     
     \item Izračunaj množice kompleksnih števil $z$, ki zadoščajo (ne)enačbam. Množice rešitev nariši.
     
@@ -297,6 +330,79 @@
     \sin 4 \varphi &= 4\cos^3 \varphi \sin \varphi - 4 \cos \varphi \sin^3 \varphi
     \end{align*}
 
+    \item Naj bo $a = \frac{1}{2} + i \frac{\sqrt{3}}{2}$. Poišči vse rešitve enačbe $z^7 + z^5a + z^3a^2 + za^3$.
+    
+    To nalogo se mi zdi da smo že rešili na proseminarju. Samo na hitro bom napisal postopek: na daleč vidimo, da je ena od rešitev $z = 0$. Ko se znebimo te rešitve, potem lahko naredimo substitucijo, $w = z^2$. Dobimo enačbo, ki je na nek način simetrična, moramo samo pametno izpostaviti člene da jo rešimo.
+    \[
+    w^3 + w^2a + wa^2 + a^3 = w(w^2 + a^2) + a(w^2 + a^2) = (w^2 + a^2)(w + a) 
+    \]
+    Obravnavamo dva pogoja, pri katerih je enačba lahko enaka 0. Rešimo za $z$.
      
+     
+    \item Poišči vsa kompleksna števila, ki izpolnjujejo enačbi:
+    \begin{align*}
+    |z|^2 + (2 + i)z  + (2 - i)\overline{z} + 4 &= 0 \\
+    (1-  i)z + (1 + i)\overline{z} + 4 &= 0    
+    \end{align*} 
+    Torej iščemo presek rešitev teh dveh enačb. No pa rešimo ti dve enačbi (pišemo $z = x + iy$):
+    \begin{align*}
+    &|z|^2 + (2 + i)z  + (2 - i)\overline{z} + 4 = \\
+    &= x^2 + y^2 + (2 + i)(x + iy) + (2 - i)(x - iy) + 4 =\\
+    &= x^2 + y^2 + 2x + 2iy + xi - y + 2x - 2iy - xi - y + 4 =\\
+    &= x^2 + y^2 + 4x - 2y + 4 = \\
+    &= (x + 2)^2 - 4 + (y - 1)^2 - 1 + 4 = 0\\
+    &\qquad (x + 2)^2 + (y - 1)^2 = 1
+    \end{align*} 
+    Prva enačba torej predstavlja krožnico s središčem $S(-2, 1)$ in radijem 1.
+    \begin{align*}
+    &(1-  i)(x + iy) + (1 + i)(x - iy) + 4 =\\
+    &= x + iy - ix  + y + x -iy + ix + y + 4 =\\
+    &= 2x + 2y + 4 = 0\\
+    &\qquad y = -x -2
+    \end{align*} 
+    Druga enačba pa predstavlja premico. Načeloma bi lahko šli računat presečišča premice in krožnice, vendar v tem primeru to ni potrebno, saj so presečišča lepa in jih lahko razberemo iz skice (ki je žal ne bo v tem dokumentu).
+    \[
+    z_1 = -2 + 0i\qquad z_2 = -3 + 1
+    \]
+
+    \item Poišči vsa kompleksna števila $z$, ki ustrezajo pogojema:
+    \[
+    z^2 + \overline{z} + 1 = 0, \quad \text{Im}(z^2) \geq 1
+    \]
+    Spet iščemo presek dveh množic. Najprej malo poračunajmo, da bomo videli, kaj ti množici predstavljata.
+    \begin{align*}
+    z^2 + \overline{z} + 1 &= 0
+    x^2 - y^2 + 2xyi + x - iy + 1 &= 0
+    \end{align*} 
+    \begin{itemize}
+        \item $x^2 - y^2 + x + 1 = 0$: Če enačbo malo preuredimo, vidimo, da to predstavlja hiperbolo.
+        \[
+        (x + \frac{1}{2})^2 - y^2 = -\frac{3}{4} 
+        \]
+        \item $2xy - y = 0$: Če izpostavimo $y$ dobimo 2 možnosti:
+        
+        \begin{itemize}
+            \item $y = 0$
+            \item $2x  - 1 = 0 \implies x = \frac{1}{2}$
+        \end{itemize}
+    \end{itemize}
+    Rezultat prve enačbe so točke, za katere velja enačba za realni in imaginarni del. Poglejmo še drugo enačbo:
+    \[
+    \text{Im}(x^2 - y^2 + 2xyi) = 2xy \geq 1
+    \]
+    Poiščimo vse točke, ki jim to ustreza:
+    \begin{itemize}
+        \item $y = 0$: V tem primeru neenačba $2xy \geq 1$ ne velja. Ni rešitev.
+        \item $x = \frac{1}{2}$:
+        \[
+        1^2 - y^2 = -\frac{3}{4} \implies y = \frac{\sqrt{7}}{2}
+        \]
+        Poglejmo še, če velja za 2. enačbo:
+        \[
+        2 \cdot \frac{1}{2} \cdot \frac{\sqrt{7}}{2} = \frac{\sqrt{7}}{2} \geq 1
+        \]
+    \end{itemize}
+    Torej je rešitev naloge $z = \frac{1}{2} + i \frac{\sqrt{7}}{2} $
+
 \end{enumerate}
 \end{document}
