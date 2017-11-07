@@ -422,5 +422,58 @@ Naj bodo $z$, $w$ in $t$ kompleksna števila. Pokaži, da velja
         =\frac{tz\overline{w} - tz\overline{w} + zw\overline{t} - zw\overline{t} + tw\overline{z} - tw\overline{z}}{2i} &=  \\
         =\frac{0+0+0}{2i} &= 0
     \end{align*}
+
+\item[(19)] Poišči vsa kompleksna števila $z$, za katera je spodnji izraz realno število.
+\[
+\left( \frac{z - i - 1}{iz + 1} \right)^2
+\]
+Naloga je precej enostavna, če bi imeli ogromno časa. Zanima nas, kdaj bo to število enako njegovi konjugirani vrednosti. Če pa želimo še letos priti do konca naloge, pa moramo uporabiti nekaj trikov.
+\[
+\left( \frac{z - i - 1}{iz + 1} \right)^2 = \left( \frac{(z - i - 1)(-i\overline{z} + 1)}{(iz + 1)(-i\overline{z} + 1)} \right)^2
+\]
+Vemo, da bo imenovalec ulomka vedno realno število (ker množimo neko kompleksno število z njegovo konjugirano vrednostjo). Če želimo, da bo celotno število realno, mora biti tudi števec realno število.
+\begin{align*}
+(z - i - 1)^2(-i\overline{z} + 1)^2 &= \overline{(z - i - 1)^2(-i\overline{z} + 1)^2}
+\intertext{Pišimo $z = x + iy$}
+(x - 1 + i(y - 1))^2(-ix -y + 1)^2 &= \overline{(\ldots)(\ldots)}
+\intertext{Ker smo leni, naredimo substitucijo $a = y-1$}
+(x - 1 + ia)^2(-ix - a)^2 = (x - 1 + ia)^2(ix + a)^2 &= \overline{(\ldots)(\ldots)}\\
+(-ix^2 -ax + ix + a +ax -ia^2)^2 &= \\
+= (-ix^2 + ix + a -ia^2)^2 = (a + i(-x^2 + x - a^2))^2 &= \\
+= a^2 + 2ai(-x^2 + x - a^2) + (-x^2 + x - a^2)^2 &=\overline{(\ldots)(\ldots)}
+\intertext{Vemo, da je desna stran v resnici konjugirana leva stran enačbe. To pomeni, da je realni del enak, imaginarni del pa nasprotno enak levi strani enačbe. Realni del se odšteje.}
+2ai(-x^2 + x - a^2) &= -2ai(-x^2 + x - a^2)\\
+4ai(-x^2 + x - a^2) &= 0\\
+a(x^2 - x + a^2) &= 0 
+\end{align*}
+To pa velja, kadar je vsaj eden izmed členov enak 0.
+
+\begin{itemize}
+    \item $a = 0 \implies y = 1$
+    
+    Ali je vsak $x \in \RR$ rešitev? Na prvi pogled bi rekli, da je, vendar moramo paziti. Na začetku naloge imamo ulomek z imenovalcem $(iz + 1)$, ki seveda ne sme biti enak 0. Če vstavimo vanj rešitev:
+    \[
+    ix - y + 1 = ix - 1 + 1 = ix \implies x \neq 0
+    \]
+    \item $x^2 - x + a^2 = 0$ dopolnimo do popolnega kvadrata:
+    \[
+    \left(x - \frac{1}{2}\right)^2 - \frac{1}{4} + (y-1)^2 = 0 \implies
+    \]
+\end{itemize}
+Torej so rešitev vsa kompleksna števila $z$, za katera velja:
+\[
+z = x + yi,\quad (y=1 \land x \neq 0) \lor \left(\left(x - \frac{1}{2}\right)^2 + (y-1)^2 = \frac{1}{4}\right)
+\]
+
+
+
+
+
+
+
+
+    
+    
+    
 \end{enumerate}
 \end{document}
