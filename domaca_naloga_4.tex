@@ -404,5 +404,20 @@
     \end{itemize}
     Torej je rešitev naloge $z = \frac{1}{2} + i \frac{\sqrt{7}}{2} $
 
+\item
+Naj bodo $z$, $w$ in $t$ kompleksna števila. Pokaži, da velja 
+	\[
+    	z\cdot Im(\overline{w}t) + w\cdot Im(\overline{t}z) + t\cdot Im(\overline{z}w) = 0
+    \]
+    Uporabimo predlagano formulo $Im z = \frac{z-\overline{z}}{2i}$ in zapišemo:
+    \begin{align*}
+    	z\cdot\frac{\overline{w}t - \overline{\overline{w}t}}{2i} + w\cdot\frac{\overline{t}z - 	\overline{\overline{t}z}}{2i} + t\cdot\frac{\overline{z}w - \overline{\overline{z}w}}{2i} &=  \\
+        \intertext{Znebimo se dvojnih konjugiranih vrednosti in poračunamo:}
+        =z\cdot\frac{\overline{w}t - \overline{t}w}{2i} + w\cdot\frac{\overline{t}z - \overline{z}t}{2i} + t\cdot\frac{\overline{z}w - \overline{w}z}{2i} &=  \\
+        =\frac{tz\overline{w} - zw\overline{t} + zw\overline{t} - tw\overline{z} + tw\overline{z} - tz\overline{w}}{2i} &=  \\
+        \intertext{Kot vidimo, so členi v števci paroma nasprotno predznačeni:}
+        =\frac{tz\overline{w} - tz\overline{w} + zw\overline{t} - zw\overline{t} + tw\overline{z} - tw\overline{z}}{2i} &=  \\
+        =\frac{0+0+0}{2i} &= 0
+    \end{align*}
 \end{enumerate}
 \end{document}
