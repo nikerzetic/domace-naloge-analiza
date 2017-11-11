@@ -1,0 +1,146 @@
+% Used latex template from https://github.com/DzinVision/latex-templates/blob/master/article.tex
+
+% Set font size
+\documentclass[a4paper, 12pt]{article}
+% Font and language settings
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Links
+\usepackage{hyperref}
+\usepackage{url}
+% Images
+\usepackage{graphicx}
+% Better controls over figure envirnoments
+\usepackage{float}
+% Various math symobs
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+% Multiple text columns
+\usepackage{multicol}
+% Miscellaneous symobls
+\usepackage{wasysym}
+% Custom enumeration symols
+\usepackage{enumerate}
+% Able to indent text with adjustwidth environment
+\usepackage{changepage}
+% More dashing option. Most important is \dashuline{} used for short proofs
+\usepackage[normalem]{ulem}
+
+% Comment this out if you want normal paragraph indents without empty lines between them.
+% This options are set primarly for texts with a lot of shorter paragraphs, like various notes.
+\setlength{\parindent}{0px}
+\setlength{\parskip}{10px}
+
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries}{}{0pt}{(\thesection)\quad}
+
+% Some macros for common number sets
+\newcommand{\NN}{\ensuremath{\mathbb{N}}}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\QQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\newcommand{\CC}{\ensuremath{\mathbb{C}}}
+
+
+\begin{document}
+    \begin{center}
+        \Large\textbf{5. domača naloga}
+    \end{center}
+
+    \section{Dokaži, da imata množici $\RR$ in $\RR \times \{0, 1\}$ isto moč.}
+    Želimo pokazati, da imata 2 množici isto moč. To lahko naredimo na več načinov. Lahko konstruiramo bijekcijo iz ene množice v drugo, s čimer bi dokazali, da imata množici enako moč. Vendar bijekcije ni vedno lahko najti. Zato lahko uporabimo kratek izrek z dolgim imenom:
+    \[
+    \text{Cantor-Bernstein-Schroederjev izrek:}\quad
+    |A| \leq |B| \land |B| \leq |A| \implies |A| = |B|
+    \]     
+    Pri čemer oznaka $|A|$ predstavlja moč množice $A$. Z drugimi besedami to pomeni, da lahko pokažemo, da sta množici $A$ in $B$ enako močni tako, da poiščemo:
+    \begin{itemize}
+        \item Injektivno preslikavo $A \to B$ in
+        \item Injektivno preslikavo $B \to A$
+    \end{itemize}
+    Iz tega sledi, da mora med množicama $A$ in $B$ obstajati tudi neka bijekcija, čeprav ni nujno, da smo jo našli.
+    
+    \begin{itemize}
+        \item $\RR \to \RR \times \{0, 1\} \quad :\quad x \mapsto (x, 0)$
+        
+        To je primer injektivne preslikave. Ni pomembno, katero smo našli, zanima nas le, če se vsaka 2 elementa iz množice $\RR$ preslikata v 2 različna elementa množice $\RR \times \{0, 1\}$. To v tem primeru očitno velja.
+        \item $\RR \times \{0, 1\} \to \RR$:
+        
+        Kako pa bi sedaj naredili injektivno preslikavo? Pri vajah smo pokazali, da velja:
+        \[
+        |(0, 1)| = |\RR|
+        \]
+        Torej je dovolj, da pokažemo, da obstaja takšna injektivna preslikava:
+        \[
+        (0, 1) \times \{0, 1\} \to \RR
+        \]
+        Takšne preslikave pa ni težko konstruirati. Primer:
+        \[
+        (a, b) \mapsto a + b
+        \]
+        \textbf{Opomba:} Zakaj velja $|(0, 1)| = |\RR|$? Ni težko konstruirati bijekcije, ki bi preslikala elemente nekega intervala v vsa realna števila. To lahko naredimo npr. z eno vejo funkcije $\tan$, ki jo ustrezno premaknemo in raztegnemo/skrčimo v $x$ smeri.
+        \[
+        f(x) = \tan \pi (x - \frac{1}{2})\ ,\qquad
+        f^{-1}(x) = \frac{1}{\pi} \arctan x + \frac{1}{2}
+        \]
+        \textbf{Še ena opomba:} Ni potrebno, da $\RR$ zamenjamo z manjšim intervalom. V tem primeru lahko samo uporabimo neko funkcijo, ki ``splošči'' vsa realna števila na nek končen interval. Primer:
+        \[
+        (a, b) \mapsto \arctan a + 10 b
+        \]
+    \end{itemize}
+    
+    \section{Dokaži, da imata množici $\RR$ in $(\RR \times \{0\}) \cup (\ZZ \times [0, 1])$ isto moč.}
+    
+    Enako kot pri prejšnji nalogi, konstruirajmo 2 injekciji na teh dveh množicah:
+    \begin{itemize}
+        \item $\RR \to (\RR \times \{0\}) \cup (\ZZ \times [0, 1]) \quad : \quad x \mapsto (x, 0)$
+        \item $(\RR \times \{0\}) \cup (\ZZ \times [0, 1]) \to \RR$:
+        
+        Spet imamo več težav s tem, da bi pokazali obratno. Problema se lahko rešimo tudi tako, da napišemo 2 posamezna predpisa, za vsak del množice posebej:
+        \[
+        (a, b) \mapsto \left\{ \begin{array}{ll}
+            \arctan a - 10 & \text{če } (a, b) \in \RR \times \{0\} \\
+            a + \frac{b}{4} & \text{če } (a, b) \in \ZZ \times [0, 1] \text{ in } a \geq 0 \\
+            -a + \frac{b}{4} + \frac{1}{2} & \text{če } (a, b) \in \ZZ \times [0, 1] \text{ in } a < 0 \\
+            \end{array}
+            \right.
+        \]
+        To je samo en primer, kako bi lahko konstruirali takšno injektivno preslikavo. Prepričan sem, da se da nalogo rešiti na kakšen veliko bolj eleganten način. Poglejmo zakaj je zgornja preslikava injektivna:
+        \begin{itemize}
+            \item Elementi $\RR \times \{0\}$ se bodo injektivno preslikali na interval \\$[-10-\frac{\pi}{2},-10 + \frac{\pi}{2}]$
+            \item Elementi  $\ZZ \times [0, 1]$ se bodo preslikali v neskončno mnogo zaprtih intervalov, vendar samo v nenegativna realna števila.
+            \[
+            \left[0, \frac{1}{4}\right] \cup \left[1, 1+\frac{1}{4}\right] \cup \left[1+\frac{1}{2}, 1+\frac{3}{4}\right] \cup \left[2, 2+\frac{1}{4}\right] \cup \ldots
+            \]
+        \end{itemize}
+        Torej je ta preslikava injektivna.
+    \end{itemize}
+
+    \section{Dokaži, da imata množici $[0, 1]$ in $\{(x, y)\in\RR \mid x^2 + y^2 =1 \}$ enako moč.}
+    \begin{itemize}
+        \item $[0, 1] \to \{(x, y)\in\RR \mid x^2 + y^2 =1 \}$
+        
+        V to stran injektivne preslikave ni tako težko narediti, vsako točko na intervalu preslikamo točko na krožnici nad intervalom.
+        \[
+        x \mapsto (x, \sqrt{1 - x^2})
+        \]
+        \item $\{(x, y)\in\RR \mid x^2 + y^2 =1 \} \to [0, 1]$
+        
+        Če poskusimo z inverzno funkcijo funkcije $x \mapsto (x, \sqrt{1 - x^2})$, vidimo, da dobro deluje za vse točke v prvem kvadrantu, težave pa imamo z vsemi ostalimi točkami. Lahko pa preprosto ``stisnemo'' točke iz prvega kvadranta samo na manjši del intervala $[0, 1]$, ter tako naredimo ``prostor'' za ostale točke.
+        \[
+        (x, y) \mapsto \left\{ \begin{array}{ll}
+            \frac{x}{8} & x \geq 0 \land y \geq 0 \\
+            \frac{x}{8} + \frac{1}{4} & x < 0 \land y \geq 0 \\
+            \frac{x}{8} + \frac{1}{2} & x < 0 \land y < 0 \\
+            \frac{x}{8} + \frac{3}{4} & x \geq 0 \land y < 0
+        \end{array} \right.
+        \]
+        Spet pa je to samo ena izmed mnogo možnosti, kako konstruirati injektivno funkcijo.
+    \end{itemize}
+
+
+\end{document}

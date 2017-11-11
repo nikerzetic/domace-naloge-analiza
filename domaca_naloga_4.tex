@@ -404,10 +404,7 @@
     \end{itemize}
     Torej je rešitev naloge $z = \frac{1}{2} + i \frac{\sqrt{7}}{2} $
 
-\item
-	Da bo 14. naloga pravilno številčena.
-
-\item
+\item[(14)]
 Naj bodo $z$, $w$ in $t$ kompleksna števila. Pokaži, da velja 
 	\[
     	z\cdot Im(\overline{w}t) + w\cdot Im(\overline{t}z) + t\cdot Im(\overline{z}w) = 0
@@ -422,6 +419,26 @@ Naj bodo $z$, $w$ in $t$ kompleksna števila. Pokaži, da velja
         =\frac{tz\overline{w} - tz\overline{w} + zw\overline{t} - zw\overline{t} + tw\overline{z} - tw\overline{z}}{2i} &=  \\
         =\frac{0+0+0}{2i} &= 0
     \end{align*}
+
+
+\item[(18)] Naj bo $n \in \NN, n \geq 2$. Pokaži, da je $(1 + \cos \frac{1}{n} + i \sin \frac{1}{n})^n$ imaginarno število. (Nasvet: Izračunaj argument)
+
+Poskusimo upoštevati nasvet in izračunajmo argument tega števila. Najprej izračunajmo argument kompleksnega števila v oklepajih:
+\[
+\arg \left(1+ \cos \frac{\pi}{n} + i \sin \frac{\pi}{n} \right) = \arctan \frac{\sin \frac{\pi}{n}}{1 + \cos \frac{\pi}{n}}
+\]
+Ulomek želimo nekako poenostaviti. Poskusimo razbiti $\sin \frac{\pi}{n}$ in $\cos \frac{\pi}{n}$ na polovična kota.
+\[
+\frac{2 \sin \frac{\pi}{2n} \cos \frac{\pi}{2n}}{(\sin^2 \frac{\pi}{2n} + \cos^2 \frac{\pi}{2n}) + \cos^2 \frac{\pi}{2n} - \sin^2 \frac{\pi}{2n}} = 
+\frac{2 \sin \frac{\pi}{2n} \cos \frac{\pi}{2n}}{2\cos^2 \frac{\pi}{2n}} = 
+\frac{\sin \frac{\pi}{2n}}{\cos \frac{\pi}{2n}} = 
+\tan \frac{n\pi}{2n}
+\]
+No, to izgleda precej bolje. Sedaj pa izračunajmo argument tega števila:
+\[
+\arg \left(1+ \cos \frac{1}{n} + i \sin \frac{1}{n} \right)^n = \arctan \tan \frac{n}{2n} = \arctan \tan \frac{\pi}{2} = \frac{pi}{2}
+\]
+Če je argument nekega kompleksnega števila enak $\frac{pi}{2}$, to pomeni, da to število leži na pozitivnem delu imaginarne osi. To pomeni, da je to število imaginarno.
 
 \item[(19)] Poišči vsa kompleksna števila $z$, za katera je spodnji izraz realno število.
 \[
@@ -465,14 +482,6 @@ Torej so rešitev vsa kompleksna števila $z$, za katera velja:
 z = x + yi,\quad (y=1 \land x \neq 0) \lor \left(\left(x - \frac{1}{2}\right)^2 + (y-1)^2 = \frac{1}{4}\right)
 \]
 
-
-
-
-
-
-
-
-    
     
     
 \end{enumerate}
