@@ -120,11 +120,11 @@
         Torej je ta preslikava injektivna.
     \end{itemize}
 
-    \section{Dokaži, da imata množici $[0, 1]$ in $\{(x, y)\in\RR \mid x^2 + y^2 =1 \}$ enako moč.}
+    \section{Dokaži, da imata množici $[0, 1]$ in $\{(x, y)\in\RR \mid x^2 + y^2 =1 \}$ isto moč.}
     \begin{itemize}
         \item $[0, 1] \to \{(x, y)\in\RR \mid x^2 + y^2 =1 \}$
         
-        V to stran injektivne preslikave ni tako težko narediti, vsako točko na intervalu preslikamo točko na krožnici nad intervalom.
+        V to stran injektivne preslikave ni tako težko narediti, vsako točko na intervalu preslikamo v točko na krožnici nad intervalom.
         \[
         x \mapsto (x, \sqrt{1 - x^2})
         \]
@@ -142,5 +142,87 @@
         Spet pa je to samo ena izmed mnogo možnosti, kako konstruirati injektivno funkcijo.
     \end{itemize}
 
+    \section{Dokaži, da imata množici $[0, 1]^2$ in $[0, 1] \times [0, 1)$ isto moč.}
+    \label{naloga4}
+    \begin{itemize}
+        \item $[0, 1] \times [0, 1) \to [0, 1]^2$
+        
+        Dokažimo najprej v to stran, ker je malo lažje. Injektivna preslikava se ponuja sama od sebe: 
+        \[
+        (a, b) \mapsto (a, b)\qquad \text{Ker: } [0, 1] \times [0, 1) \subseteq [0, 1]^2
+        \]        
+        \item $[0, 1]^2 \to [0, 1] \times [0, 1)$
+        
+        V to stran pa lahko naredimo tako, da drugi element v paru, malo ``stisnemo'' v manjši interval:
+        \[
+        (a, b) \mapsto \left(a, \frac{b}{2} \right)
+        \]
+    \end{itemize}
+
+    \section{Dokaži, da imata množici $[0, 1]^2$ in $[0, 1)^2$ isto moč.}
+    S pomočjo rešene naloge \ref{naloga4} je trivialno rešiti to nalogo, zato je reševanje za vajo prepuščeno bralcu.
+    
+    \section{Ali je katera izmed naslednjih množic števna?}
+    Kdorkoli že si, te pred branjem sledeče naloge opozarjam na visoko verjetnost napake. Zatorej ti priporočam uporabo kritičnega mišljenja.
+    \begin{itemize}
+        \item $X = \{(x_1, x_2, x_3, \ldots ) \mid x_i \in \ZZ \}$
+        
+        Podobno nalogo smo delali na vajah, zato posumimo, da je množica števno neskončna. Če je to res, je treba dokazati, da je moč te množice enaka moči realnih števil. To lahko naredimo tako, da opišemo neko konstrukcijo, s katero bi naredili injektivni preslikavi.
+        
+        \begin{itemize}
+            \item $\RR \to X$
+            
+            Naj bo $r \in \RR$. Iščemo preslikavo, ki bo $r$ preslikala v neko zaporedje celih števil. Število $r$ lahko zapišemo v decimalnem zapisu.
+            \[
+            r = r_0, r_1 r_2 r_3 \ldots r_k r_{k+1} \ldots
+            \]
+            $r_0$ je gotovo celo število. Števke $r_1, r_2  \ldots$ so števila med 0 in 9. torej so prav tako cela števila. Lepo bi bilo opozoriti še na primer, ko je $r$ oblike $r_0,999999\ldots$ kjer lahko nastopijo težave. Načeloma je preslikava v vsakem primeru injektivna, vendar ni zares več preslikava, saj enako število, zapisano na 2 različna načina preslika v 2 različni sliki. Primer:
+            \[
+            1 = 0,\overline{9} \qquad (1, 0, 0, \ldots) \neq (0, 9, 9, \ldots)
+            \]
+            
+            \item $X \to \RR$
+            
+            Preslikavo v drugo smer lahko definiramo podobno, če imamo v mislih prejšnji primer. Imamo zaporedje celih števil, vendar bomo v tem primeru naredili samo preslikavo iz zaporedja naravnih števil. To je enako, saj ima množica $\NN$ enako moč kot $\ZZ$. 
+            \[
+            (x_1, x_2, x_3, x_4, \ldots), \quad x_i \in \NN
+            \] 
+            Vsako naravno število pa lahko v decimalnem zapisu zapišemo s končno mnogo števkami.
+            \[
+            (x_{1_n} \ldots x_{1_2} x_{1_1} x_{1_0},\quad
+            x_{2_k} \ldots x_{2_2} x_{2_1} x_{2_0}, \quad\ldots)
+            \]
+            Zdaj pa lahko vse števke zapišemo ``povrsti'', ter tako dobimo neko realno število:
+            \[
+            r = 0, x_{1_n} \ldots x_{1_2} x_{1_1} x_{1_0}
+                    x_{2_k} \ldots x_{2_2} x_{2_1} x_{2_0} \ldots
+            \]
+        \end{itemize}
+        
+        \item $Y_n = \{ (x_1, x_2, x_3, \ldots ) \in X \mid x_i = 0 \text{ za } i > n \}$
+        
+        Ta množica ima eno pomembno razliko od prejšnje. Vsa zaporedja imajo vse člene od nekje naprej enake 0. To nas spomni na racionalna števila, kar pa je števno neskončna množica.
+        
+        Pravzaprav lahko na to množico potem gledamo drugače:
+        \[
+        Y_n = \ZZ ^ n \times \{0\} ^{|\ZZ|}
+        \]
+        Za moč takšne množice pa že vemo, da je števno neskončna ($\ZZ^2 = \QQ$ je števna, torej je tudi $\QQ^2 = \ZZ^4$ števno neskončna\ldots).
+        \item $Y = \bigcup_{n=1}^\infty Y_n$
+        
+        Sedaj pa gledamo množico ki je pravzaprav: 
+        \begin{align*}
+        &\ZZ \times \{0\} \times \{0\} \times \{0\} \times \ldots \\
+        \cup\ &\ZZ \times \ZZ \times \{0\} \times \{0\}  \times \ldots \\
+        \cup\ &\ZZ \times \ZZ \times \ZZ \times \{0 \} \times \ldots \\
+        \cup\ &\ldots
+        \end{align*}
+        Ker je $\{0\} \subseteq \ZZ$, hitro opazimo, da je vsaka vrstica podmnožica naslednje vrstice.
+        \[
+        \ZZ \times \{0\} \times \{0\}\times \ldots \subseteq \ZZ \times \ZZ \times \{0\} \times \ldots
+        \]
+        Sedaj nas zanima samo, če lahko katero koli zaporedje celih števil zapišemo na ta način. Ker delamo unijo $U_{n=1}^\infty$ je lahko torej dolžina zaporedja preden pridemo do samih ničel števno neskončna, kar je enako kot dolžina začetnega zaporedja $(x_1, x_2, x_3 \ldots)$. Iz tega sledi, da $Y$ ni števno neskončna množica.
+    \end{itemize}
+   
 
 \end{document}
