@@ -1,0 +1,103 @@
+% Used latex template from https://github.com/DzinVision/latex-templates/blob/master/article.tex
+
+% Set font size
+\documentclass[a4paper, 12pt]{article}
+% Font and language settings
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+% Links
+\usepackage{hyperref}
+\usepackage{url}
+% Images
+\usepackage{graphicx}
+% Better controls over figure envirnoments
+\usepackage{float}
+% Various math symobs
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathtools}
+% Multiple text columns
+\usepackage{multicol}
+% Miscellaneous symobls
+\usepackage{wasysym}
+% Custom enumeration symols
+\usepackage{enumerate}
+% Able to indent text with adjustwidth environment
+\usepackage{changepage}
+% More dashing option. Most important is \dashuline{} used for short proofs
+\usepackage[normalem]{ulem}
+
+% Comment this out if you want normal paragraph indents without empty lines between them.
+% This options are set primarly for texts with a lot of shorter paragraphs, like various notes.
+\setlength{\parindent}{0px}
+\setlength{\parskip}{10px}
+
+\usepackage{titlesec}
+\titleformat{\section}{\bfseries}{}{0pt}{(\thesection)\quad}
+
+% Some macros for common number sets
+\newcommand{\NN}{\ensuremath{\mathbb{N}}}
+\newcommand{\ZZ}{\ensuremath{\mathbb{Z}}}
+\newcommand{\QQ}{\ensuremath{\mathbb{Q}}}
+\newcommand{\RR}{\ensuremath{\mathbb{R}}}
+\newcommand{\CC}{\ensuremath{\mathbb{C}}}
+
+
+\begin{document}
+    \begin{center}
+        \Large\textbf{6. domača naloga}
+    \end{center}
+
+    \section{Naj bo $a_n = \frac{2}{3n + 7}$. Napiši nekaj členov zaporedja $a_n$. Ugotovi, ali je zaporedje navzgor omejeno, navzdol omejeno, naraščajoče, padajoče in, ali je konvergentno. Če je konvergento, izračunaj limito.}
+    
+    Zapisati nekaj členov ne bi smelo biti pretežko.
+    \[
+    a_1 = \frac{2}{3 + 7} = \frac{2}{10}, \quad a_2 = \frac{2}{6 + 7} = \frac{2}{13}, a_3 = \frac{2}{9 + 7} = \frac{2}{16} \ldots
+    \]
+    Iz tega ugibamo, da je zaporedje padajoče. To dokažemo tako, da pokažemo, da je vsak naslednji člen manjši od prejšnjega.
+    \begin{align*}
+        a_{n+1} &\stackrel{?}\leq a_n \\
+        \frac{2}{3n + 3 + 7} &\stackrel{?}\leq \frac{2}{3n + 7} \\
+        \intertext{Ni težav z množenjem, ker imamo sama pozitivna naravna števila}
+        2(3n + 7) &\stackrel{?}\leq 2(3n + 10) \\
+        3n + 7 &\stackrel{?}\leq 3n + 10 \\
+        7 &\leq 10
+    \end{align*}
+    Torej je zaporedje padajoče (in ni naraščajoče). Je navzgor omejeno z $a_1 = \frac{1}{5}$. Z metodo ostrega pogleda opazimo, da je tudi navzdol omejeno, saj bo katerikoli člen zaporedja $a_n$ zagotovo pozitiven. Spodnja meja je 0.
+    
+    Ker je zaporedje navzdol omejeno in padajoče, ima limito. Ker je to eden lažjih primerov, jo lahko uganemo: $\lim_{n \to \infty} a_n = 0$. Pa po definiciji dokažimo, da je 0 limita, saj je tudi to koristno znati.
+    
+    Izberemo si poljuben $\varepsilon > 0$ za katerega pokažemo, da za vse $n \in \NN$ večje od nekega števila velja:
+    \begin{align*}
+    |a_n - a| < \varepsilon \\
+    \left| \frac{2}{3n + 7} - 0\right| = \frac{2}{|3n + 7|} < \varepsilon 
+    \intertext{Vemo, da je $3n + 7$ pozitivno število ne glede na $n$.}
+    \frac{2}{3n + 7} < \varepsilon
+    \end{align*}
+    To velja zaradi arhimedske lastnosti. Sledi $\lim_{n \to \infty} a_n = 0$.
+    
+    \section{Po definiciji dokaži:}
+    \[
+    \lim_{n \to \infty} \frac{3n + 1} {2n-1} = \frac{3}{2}
+    \]
+    Ker smo se v srednji šoli od daleč dotaknili limit, vemo da ta enakost velja. Poskusimo jo dokazati na enak način kot smo to naredili pri prejšnji nalogi.
+    
+    Izberemo poljuben $\varepsilon > 0$
+    \begin{align*}
+        \left|  \frac{3n + 1} {2n-1} - \frac{3}{2} \right| &< \varepsilon \\
+        \left|  \frac{3n + 1- \frac{3}{2}(2n-1)} {2n-1}\right| = 
+        \left|  \frac{3n - 3n + 1 + \frac{3}{2}} {2n-1} \right| = 
+        \left| - \frac{5} {4n-2} \right| &< \varepsilon \\
+        \intertext{Upoštevamo absolutno vrednost. Vemo da sta števec in imenovalec vedno pozitivna.}
+        \frac{5} {4n-2} &< \varepsilon \\
+        \intertext{To velja zaradi arhimedske lastnosti, venar lahko še malo poračunamo, da bo lepše vidno.}
+        \frac{5} {\varepsilon} &< 4n - 2 \\
+        \frac{5} {4\varepsilon} + \frac{1}{2} &< n
+    \end{align*}
+    Enakost torej velja za vsa naravna števila večja od leve strani enačbe.
+    
+
+\end{document}
